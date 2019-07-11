@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Fri Mar 15 11:44:21 CST 2019
+org.eclipse.jst.jee.server\:weblogin1=C\:\\apache-tomcat-7.0.52\\webapps\\weblogin1
+org.eclipse.jst.jee.server\:jquery03=C\:\\apache-tomcat-7.0.52\\webapps\\jquery03

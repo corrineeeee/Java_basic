@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>provincecity</title>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var url = "/jquery02/procity";
+		$.post(url + "?method=province", function(data) {
+			var jsonobj = eval(data);
+			$(jsonobj).each(
+					function() {
+						var provincename = (this.province);
+						$("#province").append(
+								$("<option>" + provincename + "</option>"));
+					});
+		}, "json");
+
+		$("#province").change(function() {
+			$("#city").html("<option >choose city</option>");
+			$("#area").html("<option >choose area</option>");
+			var province = $(this).val();
+			$.post(url + "?method=city", {
+				"province" : province
+			}, function(data) {
+				var jsonobj = eval(data);
+				$(jsonobj).each(function() {
+					var cityname = (this.city);
+					$("#city").append($("<option>" + cityname + "</option>"));
+				});
+			}, "json");
+		});
+
+		$("#city").change(function() {
+			$("#area").html("<option >choose area</option>");
+			var province = $("#province").val();
+			var city = $(this).val();
+			$.post(url + "?method=area", {
+				"province" : province,
+				"city" : city
+			}, function(data) {
+				var jsonobj = eval(data);
+				$(jsonobj).each(function() {
+					var areaname = (this.area);
+					$("#area").append($("<option>" + areaname + "</option>"));
+				});
+			}, "json");
+		});
+	});
+</script>
+</head>
+<body>
+	<select id="province">
+		<option>choose province</option>
+	</select>
+	<select id="city">
+		<option>choose city</option>
+	</select>
+	<select id="area">
+		<option>choose area</option>
+	</select>
+
+</body>
+</html>

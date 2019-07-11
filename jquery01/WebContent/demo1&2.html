@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>综合练习</title>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(":button").click(function(){
+			var tr=$("<tr></tr>");
+			var td1=$("<td></td>");
+			td1.append($("#username").val());
+			var td2=$("<td></td>");
+			td2.append($("#phone").val());
+			var td3=$("<td></td>");
+			td3.append($("#email").val());
+			var td4=$("<td></td>");
+			
+			var a =$("<a href=''>del</a>");
+			td4.append(a);
+			
+			a.click(function(){
+				$(this).parents("tr").remove();
+			});
+			
+			tr.append(td1).append(td2).append(td3).append(td4);
+			$("#tab").append(tr);
+		});
+		
+		
+	});
+	
+</script>
+</head>
+<body>
+<div align = "center">
+	<table id = "tab" >
+		<tr>
+			<td>name</td>
+			<td>phone</td>
+			<td>email</td>
+			<td>del</td>
+		</tr>
+	</table>
+	<hr>
+	name:<input type="text" id="username">
+	phone:<input type="text" id="phone">
+	email:<input type="text" id="email">
+	<input type="button" value="add">
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+package corrineday01;
+
+public class testfortickets {
+	public static void main(String[] args) {
+		ticketthread tt = new ticketthread(100);
+		Thread t = new Thread(tt);
+		t.se
+		Thread t1 = new Thread(tt);
+		t.start();
+		t1.start();
+	}
+}

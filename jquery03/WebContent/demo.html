@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>分页</title>
+<link rel="stylesheet"
+	href="/jquery03/bootstrap/css/bootstrap.min.css">
+<script src="/jquery03/JS/jquery-1.8.3.js"></script>
+<script src="/jquery03/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var pageno = 1;
+		var pagesize = 6;
+		var url = "page";
+		$.post(url, {"pageno":pageno,"pagesize":pagesize},function(data) {
+			var json = eval(data);
+			var jsonobj = json.content;
+			var html = "";
+			var i;
+			for (i = 0; i < jsonobj.length; i++) {
+				html += "<tr>";
+				html += "<td>" + jsonobj[i].provinceID + "</td><td>"
+						+ jsonobj[i].province + "</td>";
+				html += "</tr>";
+			}
+			;
+			$("#tab").append(html);
+
+		}, "json");
+		//$(".pagenumber");
+	})
+</script>
+</head>
+<body>
+	<table border="1" width="300px" id="tab" align="center">
+	</table>
+	<nav>
+		<ul class="pagenumber pagenumber-lg">
+			<li><a href="#" aria-label="Previous"> <span
+					aria-hidden="true">&laquo;</span>
+			</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li><a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+			</a></li>
+		</ul>
+	</nav>
+</body>
+</html>

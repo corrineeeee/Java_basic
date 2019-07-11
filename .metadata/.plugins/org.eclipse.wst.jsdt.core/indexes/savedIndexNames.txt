@@ -1,0 +1,17 @@
+INDEX VERSION 1.3+C:\Users\Corrine\Desktop\HSTUDY\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2313603394.index
+3775578722.index
+1743300718.index
+2213550828.index
+581942499.index
+130851119.index
+4276222420.index
+3941834401.index
+542645199.index
+2390045984.index
+543250377.index
+2678919616.index
+2134967556.index
+2982705913.index
+610455387.index
+187697756.index

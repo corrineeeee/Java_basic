@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Refresh" content="6;url=/web_test1/yanshi.html">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var i = 6;
+	function load(){
+		window.setInterval("changeSeconds()", 1000);
+	}
+	function changeSeconds(){
+		i--;
+		document.getElementById("span1").innerHTML=i;
+	}
+</script>
+</head>
+<body>
+<h1>JS跳转</h1>
+<h3>将在6秒后跳转</h3>
+</body>
+</html>

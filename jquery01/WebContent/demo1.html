@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script>
+	$(function() {
+		//alert("hello corrine");
+	//part1
+		//得到id=d1的元素中的内容显示出
+		var size = $("#d1").size();
+		//alert(size);
+		var html = $("#d1").html();
+		//alert(html);
+		//将class=d元素中的内容后面添加欢迎你
+		$(".d").each(function(i) {
+			var welcome = $(this).html() + " welcome";
+			//alert(welcome);
+			$(this).html($(this).html() + "welcome");
+		});
+		//得到id=d1这个div在整个页面上是第几个.
+		//alert($("#d1").index());
+		//得到class=d的元素有几个
+		var size = $(".d").size();
+		//alert(size);
+		//将所有的class=d或id=d1元素中的内容设置为java
+		$("#d1,.d").html("java");
+	//part2
+		//1.	获取id=a1的所有<a>子元素
+		//alert($("#a1 a").size());
+		//2.	获取id=d 的直接<a>子元素
+		//alert($("#a1>a").size());
+		//3.	获取id=d第一个<p>兄弟元素
+		//alert($("#a1+p").html());
+		//4.	获取id=d的所有<p>兄弟元素
+		//alert($("#a1~p").size());
+		//5.	 将id=d下的所有子元素<a>的文字颜色设置成红色
+		$("#a1>a").css({"color":"red"});
+		//css(name,value)
+		//css(name:value,name:value)
+	//part3
+		//$("tr:first").css("color","red");
+		//$("tr:not(tr:first)").css("color","blue");
+		$("tr:odd").css("color","grey");
+		$("tr:even").css("color","yellow");
+	//part4
+		$("div:contains(home)").css("color","red");
+		$("div:empty").html("this is empty");
+		$("div:has(a)").css("color","yellow");
+		$("span:parent").css("color","green");
+	});
+</script>
+</head>
+<body>
+	<!-- part 1 -->
+	<div id="d1">corrine</div>
+	<div class="d">cora</div>
+	<div class="d">puffy</div>
+	<div>study</div>
+	<div>keep fit</div>
+	<!-- part 2 -->
+	<div id="a1">
+		<a>aaa</a>
+		<p>
+			<a>aa</a>
+		</p>
+		<a>bbb</a>
+	</div>
+	<p>BBB</p>
+	<!-- part 3 -->
+	<h1>information</h1>
+	<table border = '1'>
+		<tr>
+			<td>number</td>
+			<td>name</td>
+			<td>price</td>
+		</tr>
+		<tr>
+			<td>001</td>
+			<td>TV</td>
+			<td>2000</td>
+		</tr>
+		<tr>
+			<td>002</td>
+			<td>desk</td>
+			<td>500</td>
+		</tr>
+	</table>
+	<!-- part 4 -->
+	<div>home</div>
+	<div>HOME</div>
+	<div></div>
+	<div>
+		<a>corrine</a>waitingforu
+	</div>
+	<div>
+		welcome<a>home</a>
+	</div>
+	<div>
+		<span>good day</span>
+	</div>
+</body>
+</html>
